@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}login{% endblock %}
+
+
+{% block content %}
+<div id="register_bubble">
+ <h2>Welcome</h2>
+  <p>You can log in here</p>
+  <h2>login</h2>
+
+  <form action="{$ url 'log_in:user_login' %}" method="post">
+    {% csrf_token %}
+      <label name = "username">Username</label>
+      <input type = "text">
+      <label name = "password">Password</label>
+      <input type = "password">
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+</div>
+<!---
+
+-->
+{% endblock %}
